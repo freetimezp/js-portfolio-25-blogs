@@ -1,11 +1,49 @@
 "use client";
 import React from 'react';
+import { motion } from 'framer-motion';
 
-const Button = () => {
+interface ButtonProps {
+    text: string;
+    onClick?: () => void;
+    bg?: string;
+    modifier?: string;
+    padding?: string;
+    borderRadius?: string;
+    hover?: string;
+}
+
+const Button = ({
+    text,
+    onClick,
+    bg,
+    modifier = "primary",
+    padding,
+    borderRadius = "60px",
+    hover
+}: ButtonProps) => {
     return (
-        <div>
-            Button
-        </div>
+        <motion.button
+            className={`button button--${modifier}`}
+            style={{
+                backgroundColor: bg,
+                padding: padding || "0.8rem 2rem",
+                borderRadius: borderRadius || "1rem"
+            }}
+            onClick={onClick}
+            whileHover={hover && { scale: 1.1 }}
+            transition={{
+                duration: 0.3,
+                ease: [0, 0.71, 0.2, 1.01],
+                scale: {
+                    type: "spring",
+                    damping: 6,
+                    stiffness: 100,
+                    restDelta: 0.001
+                }
+            }}
+        >
+            {text}
+        </motion.button>
     );
 };
 

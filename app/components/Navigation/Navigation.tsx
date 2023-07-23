@@ -34,7 +34,14 @@ const Navigation = () => {
                 ))}
             </ul>
 
-            <Button />
+            <Button
+                text="Contact"
+                bg="#a855f7"
+                modifier="white"
+                borderRadius='60px'
+                padding='1.2rem 2rem'
+                hover="true"
+            />
         </div>
     );
 };
