@@ -1,3 +1,6 @@
+@use "./vars"as *;
+@use "./mixins"as *;
+
 .banner {
     margin-top: 1.5rem;
     padding: 2rem;
@@ -19,4 +22,36 @@
     max-width: 70vw;
     margin: 0 auto;
     text-align: center;
+}
+
+.contact-banner {
+    margin-top: 1.5rem;
+    padding: 2rem;
+    min-height: 15rem;
+
+    @include flex(column, center, center);
+    gap: 1rem;
+    border-radius: 1.5rem;
+
+    &__logo img {
+        width: 50px;
+        filter: drop-shadow(1px 4px 7px rgba(0, 0, 0, 0.2));
+    }
+
+    &__links {
+        @include flex(row, center, center);
+        gap: 3rem;
+
+        &-link {
+            @include flex(row, center, center);
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            color: $color--white;
+            transition: all 0.5s ease;
+
+            &:hover {
+                transform: translateY(-4px) scale(1.05);
+            }
+        }
+    }
 }

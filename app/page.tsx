@@ -6,6 +6,7 @@ import Banner from "./components/Banners/Banner";
 import PortfolioItem from "./components/PortfolioItem/PortfolioItem";
 
 import { portfolios } from "./utils/portfolios";
+import ContactBanner from "./blogs/ContactBanner";
 
 export default function Home() {
   return (
@@ -38,6 +39,8 @@ export default function Home() {
           text="Let's take Your Happiness Moment in life on My Camera.."
         />
       </div>
+
+      <ContactBanner />
 
     </main>
   );
