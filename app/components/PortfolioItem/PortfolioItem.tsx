@@ -6,7 +6,7 @@ import { Portfolio } from '@/app/utils/portfolios';
 
 import { motion } from 'framer-motion';
 
-function PortfolioItem({ name, image, categories }: Portfolio) {
+function PortfolioItem({ name, image, categories, onClick }: Portfolio) {
     const [isHover, setIsHover] = useState(false);
 
     const hoverVariants = {
@@ -58,6 +58,7 @@ function PortfolioItem({ name, image, categories }: Portfolio) {
             className='portfolio'
             onHoverStart={handleHoverStart}
             onHoverEnd={handleHoverEnd}
+            onClick={onClick}
         >
             <Image
                 src={image}

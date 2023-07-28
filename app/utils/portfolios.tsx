@@ -1,12 +1,10 @@
 import { StaticImageData } from "next/image";
 
-import portfolio2 from '../../public/images/photo-2.jpg';
-import portfolio3 from '../../public/images/photo-3.jpg';
-import portfolio4 from '../../public/images/photo-4.jpg';
-import portfolio5 from '../../public/images/photo-5.jpg';
-import portfolio6 from '../../public/images/photo-6.jpg';
-import portfolio7 from '../../public/images/photo-7.jpg';
-import portfolio8 from '../../public/images/photo-8.jpg';
+import photo1 from '../../public/images/photo-1.jpg';
+import photo2 from '../../public/images/photo-2.jpg';
+import photo3 from '../../public/images/photo-3.jpg';
+import photo4 from '../../public/images/photo-4.jpg';
+import photo5 from '../../public/images/photo-5.jpg';
 
 import snippet1 from '../../public/images/snippet-1.jpg';
 import snippet2 from '../../public/images/snippet-2.jpg';
@@ -43,7 +41,8 @@ export interface Portfolio {
         image3?: StaticImageData;
         image4?: StaticImageData;
         image5?: StaticImageData;
-    }
+    };
+    onClick?: () => void;
 }
 
 export const portfolios: Portfolio[] = [
@@ -52,7 +51,7 @@ export const portfolios: Portfolio[] = [
         name: "Photography",
         categories: ["Photo", "Video"],
         image: snippet1,
-        url: "photo-images",
+        url: "photography",
         features: [
             "Nature",
             "Cats",
@@ -69,8 +68,8 @@ export const portfolios: Portfolio[] = [
             "Foods",
             "And more..."
         ],
-        problem: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
-        solution: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
+        problem: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem.",
+        solution: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem.",
         links: {
             website: "https://www.google.com",
             github: "https://github.com/freetimezp"
@@ -78,20 +77,19 @@ export const portfolios: Portfolio[] = [
         content: {
             title: "Photo Blogs",
             description: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
-            image1: snippet1,
-            image2: snippet1,
-            image3: snippet1,
-            image4: snippet1,
-            image5: snippet1,
-
+            image1: photo1,
+            image2: photo2,
+            image3: photo3,
+            image4: photo4,
+            image5: photo5,
         }
     },
     {
         id: 2,
-        name: "Photography",
+        name: "Family",
         categories: ["Photo", "Video"],
         image: snippet2,
-        url: "photo-images",
+        url: "family",
         features: [
             "Nature",
             "Cats",
@@ -108,8 +106,8 @@ export const portfolios: Portfolio[] = [
             "Foods",
             "And more..."
         ],
-        problem: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
-        solution: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
+        problem: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem.",
+        solution: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem.",
         links: {
             website: "https://www.google.com",
             github: "https://github.com/freetimezp"
@@ -117,20 +115,20 @@ export const portfolios: Portfolio[] = [
         content: {
             title: "Photo Blogs",
             description: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
-            image1: snippet1,
-            image2: snippet1,
-            image3: snippet1,
-            image4: snippet1,
-            image5: snippet1,
+            image1: photo1,
+            image2: photo2,
+            image3: photo3,
+            image4: photo4,
+            image5: photo5,
 
         }
     },
     {
         id: 3,
-        name: "Photography",
+        name: "Travel",
         categories: ["Photo", "Video"],
         image: snippet3,
-        url: "photo-images",
+        url: "travel",
         features: [
             "Nature",
             "Cats",
@@ -147,8 +145,8 @@ export const portfolios: Portfolio[] = [
             "Foods",
             "And more..."
         ],
-        problem: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
-        solution: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
+        problem: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem.",
+        solution: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem.",
         links: {
             website: "https://www.google.com",
             github: "https://github.com/freetimezp"
@@ -156,20 +154,20 @@ export const portfolios: Portfolio[] = [
         content: {
             title: "Photo Blogs",
             description: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
-            image1: snippet1,
-            image2: snippet1,
-            image3: snippet1,
-            image4: snippet1,
-            image5: snippet1,
+            image1: photo1,
+            image2: photo2,
+            image3: photo3,
+            image4: photo4,
+            image5: photo5,
 
         }
     },
     {
         id: 4,
-        name: "Photography",
+        name: "Animals",
         categories: ["Photo", "Video"],
         image: snippet4,
-        url: "photo-images",
+        url: "animals",
         features: [
             "Nature",
             "Cats",
@@ -186,8 +184,8 @@ export const portfolios: Portfolio[] = [
             "Foods",
             "And more..."
         ],
-        problem: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
-        solution: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
+        problem: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem.",
+        solution: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem.",
         links: {
             website: "https://www.google.com",
             github: "https://github.com/freetimezp"
@@ -195,20 +193,20 @@ export const portfolios: Portfolio[] = [
         content: {
             title: "Photo Blogs",
             description: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
-            image1: snippet1,
-            image2: snippet1,
-            image3: snippet1,
-            image4: snippet1,
-            image5: snippet1,
+            image1: photo1,
+            image2: photo2,
+            image3: photo3,
+            image4: photo4,
+            image5: photo5,
 
         }
     },
     {
         id: 5,
-        name: "Photography",
+        name: "Holidays",
         categories: ["Photo", "Video"],
         image: snippet5,
-        url: "photo-images",
+        url: "holidays",
         features: [
             "Nature",
             "Cats",
@@ -225,8 +223,8 @@ export const portfolios: Portfolio[] = [
             "Foods",
             "And more..."
         ],
-        problem: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
-        solution: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
+        problem: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem.",
+        solution: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem.",
         links: {
             website: "https://www.google.com",
             github: "https://github.com/freetimezp"
@@ -234,20 +232,20 @@ export const portfolios: Portfolio[] = [
         content: {
             title: "Photo Blogs",
             description: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
-            image1: snippet1,
-            image2: snippet1,
-            image3: snippet1,
-            image4: snippet1,
-            image5: snippet1,
+            image1: photo1,
+            image2: photo2,
+            image3: photo3,
+            image4: photo4,
+            image5: photo5,
 
         }
     },
     {
         id: 6,
-        name: "Photography",
+        name: "Nature",
         categories: ["Photo", "Video"],
         image: snippet6,
-        url: "photo-images",
+        url: "nature",
         features: [
             "Nature",
             "Cats",
@@ -264,8 +262,8 @@ export const portfolios: Portfolio[] = [
             "Foods",
             "And more..."
         ],
-        problem: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
-        solution: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
+        problem: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem.",
+        solution: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem.",
         links: {
             website: "https://www.google.com",
             github: "https://github.com/freetimezp"
@@ -273,20 +271,20 @@ export const portfolios: Portfolio[] = [
         content: {
             title: "Photo Blogs",
             description: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
-            image1: snippet1,
-            image2: snippet1,
-            image3: snippet1,
-            image4: snippet1,
-            image5: snippet1,
+            image1: photo1,
+            image2: photo2,
+            image3: photo3,
+            image4: photo4,
+            image5: photo5,
 
         }
     },
     {
         id: 7,
-        name: "Photography",
+        name: "Funny Moments",
         categories: ["Photo", "Video"],
         image: snippet7,
-        url: "photo-images",
+        url: "funny_moments",
         features: [
             "Nature",
             "Cats",
@@ -303,8 +301,8 @@ export const portfolios: Portfolio[] = [
             "Foods",
             "And more..."
         ],
-        problem: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
-        solution: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
+        problem: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem.",
+        solution: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem.",
         links: {
             website: "https://www.google.com",
             github: "https://github.com/freetimezp"
@@ -312,20 +310,20 @@ export const portfolios: Portfolio[] = [
         content: {
             title: "Photo Blogs",
             description: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
-            image1: snippet1,
-            image2: snippet1,
-            image3: snippet1,
-            image4: snippet1,
-            image5: snippet1,
+            image1: photo1,
+            image2: photo2,
+            image3: photo3,
+            image4: photo4,
+            image5: photo5,
 
         }
     },
     {
         id: 8,
-        name: "Photography",
+        name: "Beautiful Places",
         categories: ["Photo", "Video"],
         image: snippet8,
-        url: "photo-images",
+        url: "beautiful_places",
         features: [
             "Nature",
             "Cats",
@@ -342,8 +340,8 @@ export const portfolios: Portfolio[] = [
             "Foods",
             "And more..."
         ],
-        problem: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
-        solution: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
+        problem: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem.",
+        solution: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem. Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem.",
         links: {
             website: "https://www.google.com",
             github: "https://github.com/freetimezp"
@@ -351,11 +349,11 @@ export const portfolios: Portfolio[] = [
         content: {
             title: "Photo Blogs",
             description: "Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem",
-            image1: snippet1,
-            image2: snippet1,
-            image3: snippet1,
-            image4: snippet1,
-            image5: snippet1,
+            image1: photo1,
+            image2: photo2,
+            image3: photo3,
+            image4: photo4,
+            image5: photo5,
 
         }
     }
