@@ -1,7 +1,9 @@
 "use client";
 import React from 'react';
+import { motion } from 'framer-motion';
 
 import Button from '../Button/Button';
+import { bannerVariants } from '@/app/utils/animation';
 
 interface Props {
     text: string;
@@ -21,11 +23,16 @@ function Banner({
     subtitle
 }: Props) {
     return (
-        <div className='banner'
+        <motion.div
+            className='banner'
             style={{
                 background: background,
                 boxShadow: shadow ? "0px 4px 4px rgba(0, 0, 0, 0.25)" : "none"
             }}
+            variants={bannerVariants}
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.6 }}
         >
             <p className='banner__text' style={{ color: color }}>
                 {text}
@@ -36,7 +43,7 @@ function Banner({
             {button && (
                 <Button text="Contact Us" bg="white" padding="1.2rem 2rem" hover="true" />
             )}
-        </div>
+        </motion.div>
     );
 };
 

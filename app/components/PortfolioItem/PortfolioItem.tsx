@@ -3,47 +3,12 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 
 import { Portfolio } from '@/app/utils/portfolios';
+import { gridItemsVariants, hoverVariants, hoverVariants2 } from '@/app/utils/animation';
 
 import { motion } from 'framer-motion';
 
 function PortfolioItem({ name, image, categories, onClick }: Portfolio) {
     const [isHover, setIsHover] = useState(false);
-
-    const hoverVariants = {
-        hidden: {
-            y: -100,
-            scaleX: 0.5,
-            opacity: 0
-        },
-        visible: {
-            y: 0,
-            scaleX: 1,
-            opacity: 1,
-            transition: {
-                type: "spring",
-                stiffness: 200,
-                damping: 10
-            }
-        }
-    };
-
-    const hoverVariants2 = {
-        hidden: {
-            y: 100,
-            scaleX: 0.1,
-            opacity: 0
-        },
-        visible: {
-            y: 0,
-            scaleX: 1,
-            opacity: 1,
-            transition: {
-                type: "spring",
-                stiffness: 200,
-                damping: 100
-            }
-        }
-    };
 
     const handleHoverStart = () => {
         setIsHover(true);
@@ -59,11 +24,9 @@ function PortfolioItem({ name, image, categories, onClick }: Portfolio) {
             onHoverStart={handleHoverStart}
             onHoverEnd={handleHoverEnd}
             onClick={onClick}
+            variants={gridItemsVariants}
         >
-            <Image
-                src={image}
-                alt="name"
-            />
+            <Image src={image} alt="name" />
 
             <div className='hover'>
                 <motion.div

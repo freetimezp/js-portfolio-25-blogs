@@ -1,16 +1,23 @@
 "use client";
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 import Logo from '../../../public/logo.png';
 import menuItems from '@/app/utils/menuItems';
 
 import Button from '../Button/Button';
-import Link from 'next/link';
+import { navVariants } from '@/app/utils/animation';
 
 const Navigation = () => {
     return (
-        <div className='navigation'>
+        <motion.div
+            className='navigation'
+            variants={navVariants}
+            initial="hidden"
+            animate="visible"
+        >
             <ul className='nav-items'>
                 <Image
                     src={Logo}
@@ -42,7 +49,7 @@ const Navigation = () => {
                 padding='1.2rem 2rem'
                 hover="true"
             />
-        </div>
+        </motion.div>
     );
 };
 

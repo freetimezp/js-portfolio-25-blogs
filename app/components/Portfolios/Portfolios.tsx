@@ -1,15 +1,22 @@
 "use client";
 import React from 'react';
 import { useRouter } from 'next/navigation';
+import { motion } from 'framer-motion';
 
 import { portfolios } from '@/app/utils/portfolios';
 import PortfolioItem from '../PortfolioItem/PortfolioItem';
+import { gridVariants } from '@/app/utils/animation';
 
 function Portfolios() {
     const router = useRouter();
 
     return (
-        <div className="portfolios">
+        <motion.div
+            className="portfolios"
+            variants={gridVariants}
+            initial="hidden"
+            animate="visible"
+        >
             {portfolios?.map((portfolio) => (
                 <PortfolioItem
                     key={portfolio.id}
@@ -22,7 +29,7 @@ function Portfolios() {
                     }}
                 />
             ))}
-        </div>
+        </motion.div>
     );
 };
 
