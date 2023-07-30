@@ -1,9 +1,15 @@
-import React from 'react';
+"use client";
+import React, { useRef } from 'react';
+import { motion, useTransform, useScroll } from 'framer-motion';
+
 import Banner from '../components/Banners/Banner';
 import ContactBanner from '../blogs/ContactBanner';
 import StrategyItem from '../components/StrategyItem/StrategyItem';
+import { bannerVariants, titleVariants } from '../utils/animation';
 
 const AboutPage = () => {
+    const header = useRef(null);
+
     const gradients = [
         "linear-gradient(140deg, rgba(207, 47, 152), rgba(106, 61, 236))",
         "linear-gradient(140deg, rgba(255, 207, 115), rgba(255, 122, 47))",
@@ -15,11 +21,40 @@ const AboutPage = () => {
         return gradients[Math.floor(Math.random() * gradients.length)];
     }
 
+    const scrollYProgress = useScroll({
+        target: header,
+        offset: ["start end", "end start"]
+    }).scrollYProgress;
+
+    const scale = useTransform(scrollYProgress, [0, 0.5], [0.3, 1.2]);
+    const x = useTransform(scrollYProgress, [0, 0.8, 1], [0, 0, -2400]);
+    const y = useTransform(scrollYProgress, [0, 0.75, 1], [0, 0, -1200]);
+    const opacity = useTransform(scrollYProgress, [0, 0.85, 0.95], [1, 1, 0]);
+
     return (
         <div className='u-pad-2'>
-            <div className="about-header" style={{ background: randomGradient() }}>
-                <img src="/images/about.jpg" alt="about" className="about-header__image" />
-            </div>
+            <motion.div
+                className="about-header"
+                style={{ background: randomGradient() }}
+                ref={header}
+            >
+                <motion.img
+                    src="/images/about.jpg"
+                    alt="about"
+                    className="about-header__image"
+                    variants={bannerVariants}
+                    initial="offscreen"
+                    whileInView="onscreen"
+                    viewport={{ once: true, amount: 0 }}
+                    style={{
+                        scale: scale,
+                        translateX: "-50%",
+                        x: x,
+                        y: y,
+                        opacity: opacity
+                    }}
+                />
+            </motion.div>
             <div className="about-content">
                 <Banner
                     text="Interested in working with me on your portfolio? Send me email.."
@@ -28,7 +63,15 @@ const AboutPage = () => {
                 />
 
                 <section className="strategy-section">
-                    <h2 className="strategy-section__title">Memories</h2>
+                    <motion.h2
+                        className="strategy-section__title"
+                        variants={titleVariants}
+                        initial="offscreen"
+                        whileInView="onscreen"
+                        viewport={{ once: true, amount: 0.2 }}
+                    >
+                        Memories
+                    </motion.h2>
                     <ol className="strategy-section__list">
                         <StrategyItem
                             number={"01"}
@@ -47,7 +90,14 @@ const AboutPage = () => {
                         />
                     </ol>
 
-                    <h2 className="strategy-section__title">Creative</h2>
+                    <motion.h2
+                        className="strategy-section__title"
+                        variants={titleVariants}
+                        initial="offscreen"
+                        whileInView="onscreen"
+                        viewport={{ once: true, amount: 0.2 }}
+                    >                        Creative
+                    </motion.h2>
                     <ol className="strategy-section__list">
                         <StrategyItem
                             number={"04"}

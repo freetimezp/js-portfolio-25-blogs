@@ -110,3 +110,21 @@ export const hoverVariants2 = {
     }
 };
 
+export const titleVariants: Variants = {
+    offscreen: {
+        y: 300,
+        opacity: 0,
+        scaleY: 0.5
+    },
+    onscreen: {
+        y: 0,
+        opacity: 1,
+        scaleY: 1,
+        transition: {
+            type: "spring",
+            bounce: 0.45,
+            duration: 0.8
+        }
+    }
+}
+
