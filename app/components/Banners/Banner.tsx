@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 
 import Button from '../Button/Button';
 import { bannerVariants } from '@/app/utils/animation';
+import { useGlobalContext } from '@/app/layout';
 
 interface Props {
     text: string;
@@ -22,6 +23,8 @@ function Banner({
     color,
     subtitle
 }: Props) {
+    const { handleToggle } = useGlobalContext();
+
     return (
         <motion.div
             className='banner'
@@ -41,7 +44,13 @@ function Banner({
                 {subtitle}
             </p>
             {button && (
-                <Button text="Contact Us" bg="white" padding="1.2rem 2rem" hover="true" />
+                <Button
+                    text="Contact Us"
+                    bg="white"
+                    padding="1.2rem 2rem"
+                    hover="true"
+                    onClick={handleToggle}
+                />
             )}
         </motion.div>
     );

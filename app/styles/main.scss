@@ -35,3 +35,33 @@ body {
     transform-origin: 0%;
     z-index: 9999;
 }
+
+.menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 20rem;
+    width: 40rem;
+    background: radial-gradient(80% 80% at 56% 19%, #9759f5 0%, #7263f3 99%);
+    box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.2);
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    z-index: 10000;
+
+    .buttons {
+        padding: 1.5rem 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+
+        button:first-child {
+            align-self: flex-end;
+        }
+
+        button:nth-child(n + 2) {
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+        }
+    }
+}

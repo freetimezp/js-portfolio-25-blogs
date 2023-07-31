@@ -37,3 +37,12 @@
         }
     }
 }
+
+.active-menu {
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.15);
+
+    >a {
+        color: $color--prussian-blue;
+    }
+}

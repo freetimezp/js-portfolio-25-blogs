@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -9,8 +9,13 @@ import menuItems from '@/app/utils/menuItems';
 
 import Button from '../Button/Button';
 import { navVariants } from '@/app/utils/animation';
+import { useGlobalContext } from '@/app/layout';
 
 const Navigation = () => {
+    const [activeNav, setActiveNav] = useState(false);
+    const [activeMenu, setActiveMenu] = useState(0);
+    const { handleToggle } = useGlobalContext();
+
     return (
         <motion.div
             className='navigation'
@@ -32,8 +37,14 @@ const Navigation = () => {
                     }}
                 />
 
-                {menuItems?.map((item) => (
-                    <li key={item.id} className="nav-items__item">
+                {menuItems?.map((item, index: number) => (
+                    <li
+                        key={item.id}
+                        className={`nav-items__item ${activeMenu === index && 'active-menu'}`}
+                        onClick={() => {
+                            setActiveMenu(index)
+                        }}
+                    >
                         <Link href={item.url}>
                             {item.title}
                         </Link>
@@ -48,6 +59,7 @@ const Navigation = () => {
                 borderRadius='60px'
                 padding='1.2rem 2rem'
                 hover="true"
+                onClick={handleToggle}
             />
         </motion.div>
     );
