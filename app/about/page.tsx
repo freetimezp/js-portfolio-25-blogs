@@ -1,11 +1,20 @@
 "use client";
 import React, { useRef } from 'react';
+import Link from 'next/link';
+
 import { motion, useTransform, useScroll } from 'framer-motion';
+import { BsYoutube, BsGithub, BsLinkedin } from 'react-icons/bs';
+import { Abril_Fatface } from 'next/font/google';
 
 import Banner from '../components/Banners/Banner';
 import ContactBanner from '../blogs/ContactBanner';
 import StrategyItem from '../components/StrategyItem/StrategyItem';
 import { bannerVariants, titleVariants } from '../utils/animation';
+
+const abril = Abril_Fatface({
+    subsets: ["latin"],
+    weight: ["400"]
+});
 
 const AboutPage = () => {
     const header = useRef(null);
@@ -54,6 +63,31 @@ const AboutPage = () => {
                         opacity: opacity
                     }}
                 />
+                <motion.div
+                    className="about-header__content"
+                    variants={titleVariants}
+                    initial="offscreen"
+                    whileInView="onscreen"
+                    viewport={{ once: true, amount: 0.2 }}
+                >
+                    <h1 className={`about-header__title ${abril.className}`}>Freetime</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Quae, reiciendis officia? Voluptate dolore maiores, ratione
+                        saepe ullam illo consequatur perspiciatis!
+                    </p>
+                    <div className='icons'>
+                        <Link href="https://www.linkedin.com/">
+                            <BsLinkedin />
+                        </Link>
+                        <Link href="https://www.github.com/">
+                            <BsGithub />
+                        </Link>
+                        <Link href="https://www.youtube.com/">
+                            <BsYoutube />
+                        </Link>
+                    </div>
+                </motion.div>
             </motion.div>
             <div className="about-content">
                 <Banner

@@ -34,11 +34,23 @@
     @include flex(row, initial, center);
     gap: 2rem;
 
+    @media screen and (max-width: 1045px) {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 2rem 1rem;
+    }
+
     &__title {
         flex: 0 0 35%;
-        @include flex(row, initial, center);
+        align-self: flex-start;
         font-weight: 500;
         font-size: clamp(2rem, 8vw, 4.5rem);
+
+        @include flex(row, initial, center);
+
+        @media screen and (max-width: 1045px) {
+            flex-direction: column;
+        }
 
         span:first-child {
             margin-right: 1rem;

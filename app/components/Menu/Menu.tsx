@@ -3,7 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 import Button from '../Button/Button';
-import { useGlobalContext } from '@/app/layout';
+import { useGlobalContext } from '@/app/utils/globalContext';
 
 const Menu = () => {
     const { toggle, handleToggle } = useGlobalContext();

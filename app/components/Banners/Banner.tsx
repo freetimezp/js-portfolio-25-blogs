@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 import Button from '../Button/Button';
 import { bannerVariants } from '@/app/utils/animation';
-import { useGlobalContext } from '@/app/layout';
+import { useGlobalContext } from '@/app/utils/globalContext';
 
 interface Props {
     text: string;

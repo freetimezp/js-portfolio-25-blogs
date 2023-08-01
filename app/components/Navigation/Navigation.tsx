@@ -9,7 +9,7 @@ import menuItems from '@/app/utils/menuItems';
 
 import Button from '../Button/Button';
 import { navVariants } from '@/app/utils/animation';
-import { useGlobalContext } from '@/app/layout';
+import { useGlobalContext } from '@/app/utils/globalContext';
 
 const Navigation = () => {
     const [activeNav, setActiveNav] = useState(false);
